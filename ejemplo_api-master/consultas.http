@@ -1,0 +1,69 @@
+### Obtencion de todos los productos
+GET http://localhost:1234/productos/
+
+### Obtención de un producto específico
+
+GET http://localhost:1234/productos/3/
+
+### Agregado de un producto nuevo, el body lleva el json con el objeto
+POST http://localhost:1234/productos
+Content-Type: application/json
+
+{
+    "id": 11,
+    "nombre": "Mixer multiuso ACME",
+    "tipo": "Electrodoméstico de cocina",
+    "precio": 150.15
+}
+
+### Actualización de un producto, el body lleva solo el atributo a modificar
+
+PATCH http://localhost:1234/productos/10
+Content-Type: application/json
+
+{
+    "nombre": "Mixer multiuso ACME PODEROSO"
+}
+
+### Borrado de un producto
+DELETE http://localhost:1234/productos/8
+
+// REQUEST PARA ENDPOINTS DE AMPLIACION >>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+### Obtener lista completa de usuarios (GET):
+GET http://localhost:1234/usuarios/
+
+### Crear un nuevo usuario (POST):
+POST http://localhost:1234/usuarios/
+Content-Type: application/json
+
+{
+    "nombre": "Nombre del Nuevo Usuario",
+    "telefono": "1234567890"
+}
+
+### Modificar un atributo de un usuario por ID (PATCH):
+PATCH http://localhost:1234/usuarios/:id
+Content-Type: application/json
+
+{
+    "nombre": "Nuevo Nombre"
+}
+
+### Eliminar un usuario por ID (DELETE):
+DELETE http://localhost:1234/usuarios/:id
+
+### Obtener el precio de un producto por ID (GET):
+GET http://localhost:1234/productos/precio/:id
+
+### Obtener el nombre de un producto por ID (GET):
+GET http://localhost:1234/productos/nombre/:id
+
+### Obtener el teléfono de un usuario por ID (GET):
+GET http://localhost:1234/usuarios/telefono/:id
+
+### Obtener el nombre de un usuario por ID (GET):
+GET http://localhost:1234/usuarios/nombre/:id
+
+### Obtener el total del stock actual de productos (GET):
+GET http://localhost:1234/productos/total-precio
